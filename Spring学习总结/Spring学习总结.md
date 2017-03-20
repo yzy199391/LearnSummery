@@ -9,7 +9,7 @@
 >3. IOC/DI（控制反转/依赖注入）：为管理Bean创建的一个Bean的内存区，将接口与实现分离
 >4. AOP：面向一小段代码编程，在不改变原始代码段的基础上实现功能性增强，例如：在不改变servlet代码的基础上加入日志的功能；在不改变Structs的action代码的基础上加入数据库事物的功能。
 
-[例1：IOC实现接口与实现类分离:Spring_IOC_test]()  
+[例1：IOC实现接口与实现类分离:Spring_IOC_test](https://github.com/yzy199391/LearnSummery/tree/master/Spring%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/Spring_IOC_test)  
 解析：
 1. 通过maven管理添加引入spring所需依赖，使用myeclipse自动添加spring框架结构；
 2. 使用新建applicationContext.xml配置文件添加bean实现接口与实现类的解耦；
