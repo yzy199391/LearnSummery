@@ -118,9 +118,9 @@ __Ps__：
 
 [例7：测试Bean的作用域（Runit_ScopeTest/date）](https://github.com/yzy199391/LearnSummery/tree/master/Spring%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/Spring_IOC_test)  
 解析：  
-通过注入bean设置不同scope，在主方法中间隔3秒打印一次时间（创建bean的时间）显示结果如下：
+通过注入bean设置不同scope，在主方法中间隔3秒打印一次时间（创建bean的时间）显示结果如下：  
 Singleton：  
-![Bean作用范围Singleton测试结果](https://github.com/yzy199391/LearnSummery/blob/master/Spring%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/images/Spring%E5%AD%A6%E4%B9%A0-Bean%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4Singleton%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C.png)
+![Bean作用范围Singleton测试结果](https://github.com/yzy199391/LearnSummery/blob/master/Spring%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/images/Spring%E5%AD%A6%E4%B9%A0-Bean%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4Singleton%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C.png)  
 Prototype：  
 ![Bean作用范围Prototype测试结果](https://github.com/yzy199391/LearnSummery/blob/master/Spring%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/images/Spring%E5%AD%A6%E4%B9%A0-Bean%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4Prototype%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C.png)
 
@@ -144,7 +144,7 @@ Prototype：
 解析：  
 1. 通过Spring中类PropertyPlaceholderConfigure将.properties文件从classpath路径中加载进内存，通过EL表达式${}的形式指定文件中的key来将对应的value注入runit_propertiesBean的属性中。
 
-## Spring使用多个applicationcontext.xml配置文件　##
+## Spring使用多个applicationcontext.xml配置文件 ##
 >在将不同类型的注入分解到不同功能的配置文件的应用场景中，需要使用到多个spring配置文件。  
 >+ 配置方法：  
 > `<import resource="other.xml">`
