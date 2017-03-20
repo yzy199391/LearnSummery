@@ -17,7 +17,7 @@
 
 
 
-[例2：业务变更为将数据保存进xml文件中:Spring_IOC_test]()  
+[例2：业务变更为将数据保存进xml文件中:Spring_IOC_test](https://github.com/yzy199391/LearnSummery/tree/master/Spring%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/Spring_IOC_test)  
 解析：
 1. 在练习1的基础上新增加一个将数据保存进xml的实现类；
 2. 在配置文件中声明这个实现类；
@@ -25,7 +25,7 @@
 
 __Ps__：
 >ApplicationContext接口的类层次结构：
->![]()
+>![Spring学习-总体模块](https://github.com/yzy199391/LearnSummery/blob/master/Spring%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/images/Spring%E5%AD%A6%E4%B9%A0-%E6%80%BB%E4%BD%93%E6%A8%A1%E5%9D%97.png)
 
 
 ## IOC ##
