@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	<!-- IOC实现接口、实现类与使用类的解耦 -->
+	<bean id = "dboperate" class = "dataOperator.DBOperator"></bean>
+	<bean id = "dboperateXml" class = "dataOperator.DBOperatorXML"></bean>
+	<bean id = "run" class = "run.test.Run">
+		<!-- <property name="dataOperator" ref = "dboperate"></property> -->
+		<property name="dataOperator" ref = "dboperateXml"></property>
+	</bean>
+	
+	<!-- 常用数据类型注入  -->
+	<bean id = "dataType_test_ref" class = "dataType_test.test" init-method = "init">
+		<property name = "string_var" value = "yzy"></property>
+		<property name = "int_var" value = "99"></property>
+		<property name = "short_var" value = "100"></property>
+		<property name = "char_var" value = "男"></property>
+		<property name = "long_var" value = "999"></property>
+		<property name = "double_var" value = "999.999"></property>
+		<property name = "boolean_var" value = "false"></property>
+	</bean>
+	<bean id = "runit_ref" class = "run.test.runit">
+		<property name = "test_ref" ref = "dataType_test_ref"></property>
+	</bean>
+	<!-- null类型注入 -->
+	<bean id = "null_test_ref" class = "dataType_test.testNull">
+		<property name = "null_string">
+			<null/>
+		</property>
+	</bean>
+	<bean id = "runit_null_ref" class = "run.test.runit_null">
+		<property name = "testNull_ref" ref = "null_test_ref"></property>
+	</bean>
+	<!-- properties类型注入 -->
+	<bean id = "properties_test_ref" class = "dataType_test.testProperties">
+		<property name = "properties">
+			<props>
+				<prop key="1">11</prop>
+				<prop key="2">22</prop>
+				<prop key="3">33</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id = "runit_properties_ref" class = "run.test.runit_properties">
+		<property name = "test_ref" ref = "properties_test_ref"></property>
+	</bean>
+	<!-- 构造方法注入 -->
+	<bean id = "test_ref" class = "init_test.test">
+		<constructor-arg type = "java.lang.String" value = "hello"></constructor-arg>
+		<constructor-arg type = "java.lang.String" value = "world"></constructor-arg>
+	</bean>
+	
+	<bean id = "runit_init" class = "run.test.runit_init">
+		<property name="test_ref" ref = "test_ref"></property>
+	</bean>
+	<!-- Bean的作用域 -->
+	<bean id = "my_date" class = "java.util.Date" scope = "singleton"/>
+	<!-- <bean id = "my_date" class = "java.util.Date" scope = "prototype"/> -->
+	<!-- 注入外部属性文件属性值 -->
+	<bean id = "property_configer" class = "org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+		<property name = "locations">
+			<list>
+				<value>db_connection_info.properties</value>
+			</list>
+		</property>
+	</bean>
+	<bean id = "show_db_info" class = "run.test.runit_propertiesBean">
+		<property name = "username" value = "${test.username}"/>
+		<property name = "password" value = "${test.password}"/>
+	</bean>
+</beans>

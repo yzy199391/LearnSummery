@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--注入外部属性信息-->
+    <bean id = "property_configer" class = "org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>TestProperty.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id = "propertyTest" class = "test.PropertyTest">
+        <property name = "dbconnect" value = "${dbconnect}" />
+        <property name = "dbname" value = "${dbname}" />
+        <property name = "dbpassword" value = "${dbpassword}"/>
+    </bean>
+
+    <bean id = "PropertyTest" class = "runit.RunPropertyTest">
+        <property name="test" ref = "propertyTest"/>
+    </bean>
+
+    <!--多配置文件使用-->
+    <import resource = "other.xml" />
+    <bean id = "yzy_bean1" class = "test.implementclass.my_interface_imple"></bean>
+    <bean id = "runit" class = "runit.RunMultiConf">
+        <property name="mi" ref = "yzy_bean1"></property>
+    </bean>
+    <bean id = "runit2" class = "runit.RunMultiConf">
+        <property name="mi" ref = "yzy_bean2"></property>
+    </bean>
+
+    <!--方法执行前增强-->
+    <bean id = "my_beforemethod_advice" class = "runit.RunBeforeAdvice"></bean>
+
+    <!--方法执行后增强-->
+    <bean id = "my_afterreturning_advice" class = "runit.RunAfterReturningAdvice"></bean>
+
+    <bean id = "my_proxy" class = "org.springframework.aop.framework.ProxyFactoryBean">
+        <property name = "proxyInterfaces">
+            <value>test.interfacepackage.my_interface</value>
+        </property>
+        <property name="target" ref = "yzy_bean1"></property>
+        <property name = "interceptorNames">
+            <list>
+                <value>my_beforemethod_advice</value>
+                <value>my_afterreturning_advice</value>
+            </list>
+        </property>
+    </bean>
+</beans>
