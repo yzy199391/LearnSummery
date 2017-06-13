@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LEARN_DEMOS.iml" filepath="$PROJECT_DIR$/LEARN_DEMOS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ThinkingInJava/ThinkingInJava.iml" filepath="$PROJECT_DIR$/ThinkingInJava/ThinkingInJava.iml" />
+      <module fileurl="file://F:/IDEA_STUDY_DEMO/demo/demo.iml" filepath="F:/IDEA_STUDY_DEMO/demo/demo.iml" />
+      <module fileurl="file://F:/IDEA_STUDY_DEMO/ThinkingInJava/thinkinginjava.iml" filepath="F:/IDEA_STUDY_DEMO/ThinkingInJava/thinkinginjava.iml" />
     </modules>
   </component>
 </project>

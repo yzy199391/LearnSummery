@@ -6,7 +6,12 @@
 
     <groupId>IDEA_PROJECT_STUDYDEMO</groupId>
     <artifactId>study_demo</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>../../../../IDEA_STUDY_DEMO</module>
+        <module>../../../../IDEA_STUDY_DEMO/ThinkingInJava</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
