@@ -24,7 +24,7 @@
 >>注：不要直接用update global_name set global_name=”将global_name设置为空，否则数据库不能启动，会报ORA-00600[18061] 或 ORA-00600[18062]这样的错误。 只有用备份进行恢复后才能打开。（参见metalink note 743676.1）
 >
 >对象类型:  
->![global_name对象类型图片](https://github.com/yzy199391/LearnSummery/blob/master/oracle学习/image/global_name对象类型.png"global_name对象类型")  
+>![global_name对象类型图片](https://github.com/yzy199391/LearnSummery/blob/master/oracle学习/image/global_name对象类型.png)  
 >由上图可以看出，global_name实际上是一个视图，来源于sys.props$表，而这个表是非常重要的一个关于数据库属性的表，不要随意更改此表的内容，否则将引起无可预料的、无法挽回的损失。  
 >参数组成:  
 >Db_name.Db_domain  
