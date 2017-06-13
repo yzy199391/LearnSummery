@@ -8,7 +8,7 @@
 >sql>show parameter global_name;  
 >参数修改方式:
 >alter system set global_names=true;  
->oracle官方文档中对此参数说明：    
+>oracle官方文档中对此参数说明:  
 >If the value of the GLOBAL_NAMES initialization parameter is TRUE, then the database link must have the same name as the database to which it connects. If the value of GLOBAL_NAMES is FALSE, and if you have changed the global name of the database, then you can specify the global name.  
 >从上述说明可以看出：
 >+ global_names为true时,本地数据库连接名称必须与远程数据库的global_name相同;
