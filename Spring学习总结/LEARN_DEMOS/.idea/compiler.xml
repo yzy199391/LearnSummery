@@ -25,6 +25,7 @@
         <processorPath useClasspath="true" />
         <module name="thinkinginjava" />
         <module name="ThinkingInJava" />
+        <module name="thinkinginjava (1)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
